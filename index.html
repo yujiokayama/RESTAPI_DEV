@@ -4,30 +4,182 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>REST API TEST</title>
-    <script src="./lib/js/request.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./lib/js/request.js" defer></script>
   </head>
   <body>
-    <section>
+    <div class="title-main">
       <h1>REST API CRUD TEST</h1>
-      <div>
-        <button id="CREATE">CREATE</button>
-        <button id="READ">READ</button>
-        <button id="UPDATE">UPDATE</button>
-        <button id="DELETE">DELETE</button>
+    </div>
+
+    <section>
+      <div class="btn-group">
+        <button id="CREATE" class="btn-circle blue">CREATE</button>
+        <button id="READ" class="btn-circle red">READ</button>
+        <button id="UPDATE" class="btn-circle yellow">UPDATE</button>
+        <button id="DELETE" class="btn-circle green">DELETE</button>
       </div>
-      <div id="dataReportList">
-        <table>
-          <thead>
-            <tr>
-              <th>id</th>
-              <th>title</th>
-              <th>author</th>
-            </tr>
-          </thead>
-          <tbody>
-          </tbody>
-        </table>
+
+      <div class="content-group">
+        <div id="MY_POKEMON">
+          <section>
+            <h1>てもちのポケモン</h1>
+            <table>
+              <thead>
+                <tr>
+                  <th>なまえ</th>
+                  <th>れべる</th>
+                  <th>たいぷ</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </section>
+        </div>
+        <div id="">
+          <section>
+            <h1>ポケモンセンター</h1>
+            <table>
+              <thead>
+                <tr>
+                  <th>なまえ</th>
+                  <th>れべる</th>
+                  <th>たいぷ</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </section>
+        </div>
       </div>
     </section>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: "Noto Sans JP", sans-serif;
+      }
+
+      .title-main {
+        padding: 0.5em 1em;
+        background-image: linear-gradient(-225deg, #1d8fe1 48%, #2c73d2 100%);
+        color: #fff;
+      }
+      .title-main h1 {
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        letter-spacing: 5px;
+      }
+
+      .btn-group {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin: 20px 0;
+      }
+      .btn-circle {
+        display: inline-block;
+        text-decoration: none;
+        width: 120px;
+        height: 120px;
+        margin: 0 20px;
+        line-height: 120px;
+        border-radius: 50%;
+        text-align: center;
+        overflow: hidden;
+        font-weight: bold;
+        background-color: #fff;
+        transition: 0.4s;
+        cursor: pointer;
+      }
+      .blue {
+        color: #459FFF;
+        border: solid 2px #459FFF;
+      }
+      .blue:hover {
+        color: #fff;
+        background: #459FFF;
+      }
+      .red {
+        color: #E8434A;
+        border: solid 2px #E8434A;
+      }
+      .red:hover {
+        color: #fff;
+        background: #E8434A;
+      }
+      .yellow {
+        color: #FFC145;
+        border: solid 2px #FFC145;
+      }
+      .yellow:hover {
+        color: #fff;
+        background: #FFC145;
+      }
+      .green {
+        color: #1EFF9D;
+        border: solid 2px #1EFF9D;
+      }
+      .green:hover {
+        color: #fff;
+        background: #1EFF9D;
+      }      
+
+      .content-group {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin: 20px 0;
+      }
+      .content-group div {
+        width: calc(50% - 40px);
+        margin: 0 20px;
+      }
+
+      table {
+        border-collapse: collapse;
+        border-spacing: 0;
+        width: 100%;
+      }
+
+      table tr {
+        border-bottom: solid 1px #eee;
+        cursor: pointer;
+      }
+
+      table tr:hover {
+        background-color: #d4f0fd;
+      }
+
+      table th,
+      table td {
+        text-align: center;
+        width: 25%;
+        padding: 15px 0;
+      }
+
+      table td.icon {
+        background-size: 35px;
+        background-position: left 5px center;
+        background-repeat: no-repeat;
+        padding-left: 30px;
+      }
+
+      table td.icon.bird {
+        background-image: url(icon-bird.png);
+      }
+
+      table td.icon.whale {
+        background-image: url(icon-whale.png);
+      }
+
+      table td.icon.crab {
+        background-image: url(icon-crab.png);
+      }
+    </style>
   </body>
 </html>
